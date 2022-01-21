@@ -1,0 +1,11 @@
+<div class="container h-75">
+    <div class="row">    
+        <h1>Alterar Endereço</h1>
+
+        <%= render 'form', address: @address %>
+        <div class="text-end">    
+            <%= link_to 'Info', @address, :class => "btn btn-success text-white col-2" %>
+            <%= link_to 'Voltar', addresses_path, :class => "btn btn-secondary text-white col-2" %>
+        </div>
+     </div>
+</div>

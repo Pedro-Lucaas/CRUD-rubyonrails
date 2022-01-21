@@ -1,0 +1,38 @@
+<div class="container h-75">
+    <div class="row">    
+
+      <p id="notice"><%= notice %></p>
+
+            <p class="fs-4 p-2">
+        <strong>Nome: </strong>
+        <%= @hardware.product.name %>
+      </p>
+
+            <p class="fs-4 p-2">
+        <strong>Descrição: </strong>
+        <%= @hardware.product.description %>
+      </p>
+
+            <p class="fs-4 p-2">
+        <strong>Preço de Venda: </strong>
+        <%= @hardware.product.price %>
+      </p>
+
+            <p class="fs-4 p-2">
+        <strong>Fornecedor: </strong>
+        <%= @hardware.product.vendor.name %>
+      </p>
+
+            <p class="fs-4 p-2">
+        <strong>Método de montagem: </strong>
+        <%= @hardware.assembly_method %>
+      </p>
+
+
+
+
+      <%= link_to 'Edit', edit_hardware_path(@hardware), :class => "btn btn-warning text-white col-2 p-2 m-2" %>
+      <%= link_to 'Back', hardwares_path, :class => "btn btn-secondary text-white col-2 p-2 m-2" %>
+
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container h-75">
+  <div class="row">    
+
+    <p id="notice"><%= notice %></p>
+
+      <p class="fs-4 p-2">
+      <strong>Nome:</strong>
+      <%= @vendor.name %>
+    </p>
+
+      <p class="fs-4 p-2">
+      <strong>Cnpj:</strong>
+      <%= @vendor.cnpj %>
+    </p>
+
+      <p class="fs-4 p-2">
+      <strong>Endereço:</strong>
+      <%= @vendor.address.district+", " + @vendor.address.complement %>
+    </p>
+
+    <%= link_to 'Alterar', edit_vendor_path(@vendor), :class => "btn btn-warning text-white col-2 p-2 m-2" %>
+    <%= link_to 'Voltar', vendors_path, :class => "btn btn-secondary text-white col-2 p-2 m-2" %>
+
+  </div>
+</div>

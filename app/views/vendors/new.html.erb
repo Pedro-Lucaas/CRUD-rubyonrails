@@ -1,0 +1,10 @@
+<div class="container h-75">
+  <div class="d-flex row">    
+    <h1>Novo Fornecedor</h1>
+
+    <%= render 'form', vendor: @vendor %>
+    <div class="text-end">    
+        <%= link_to 'Back', vendors_path, :class => "btn btn-secondary text-white col-2" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container h-75">
+  <div class="row">      
+    <p id="notice"><%= notice %></p>
+
+    <h1 class="col-10">Softwares</h1>
+    <%= link_to 'Novo Software', new_software_path, :class => "btn btn-primary text-white col-2 align-self-end" %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Fornecedor</th>
+          <th>Versão</th>
+          <th>Linguagem</th>
+          <th>Categoria</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @softwares.each do |software| %>
+          <tr>
+            <td><%= software.product.name %></td>
+            <td><%= software.product.description %></td>
+            <td><%= software.product.price %></td>
+            <td><%= software.product.vendor.name %></td>
+            <td><%= software.version %></td>
+            <td><%= software.language %></td>
+            <td><%= software.category %></td>
+            <td><div class="d-flex btn-group" role="group" aria-label="Basic example">
+                  <%= link_to 'Info', software,  :class => "btn btn-success text-white" %>
+                  <%= link_to 'Alterar', edit_software_path(software),  :class => "btn btn-warning text-white" %>
+                  <%= link_to 'Remover', software, method: :delete, data: { confirm: 'Are you sure?' },  :class => "btn btn-danger text-white" %>
+                </div>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  </div>
+</div>

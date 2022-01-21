@@ -1,0 +1,43 @@
+<%= form_with(model: hardware) do |form| %>
+  <% if hardware.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hardware.errors.count, "error") %> prohibited this hardware from being saved:</h2>
+
+      <ul>
+        <% hardware.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.fields_for :product do |f| %>
+    <div class="field">
+      <%= f.label "Nome", :class => "form-label" %>
+      <%= f.text_field :name, :class => "form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Preço", :class => "form-label" %>
+      <%= f.text_field :price, :class => "form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Fornecedor" %>
+      <%= f.collection_select :vendor_id, Vendor.order(:name), :id, :name,  {prompt: "Selecione o Fornecedor..."}, {class: "form-select"}  %>
+    </div>
+
+      <div class="field">
+      <%= f.label "Descrição", :class => "form-label" %>
+      <%= f.text_area :description, :class => "form-control"  %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Método de Montagem", :class => "form-label" %>
+    <%= form.text_field :assembly_method, :class => "form-control"  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salvar", :class => "btn btn-primary text-white col-2" %>
+  </div>
+<% end %>

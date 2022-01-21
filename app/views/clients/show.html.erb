@@ -1,0 +1,28 @@
+<div class="container h-75">
+  <div class="row">    
+    <p id="notice"><%= notice %></p>
+
+      <p class="fs-4 p-2">
+      <strong>Nome:</strong>
+      <%= @client.name %>
+    </p>
+
+      <p class="fs-4 p-2">
+      <strong>RG:</strong>
+      <%= @client.rg %>
+    </p>
+
+      <p class="fs-4 p-2">
+      <strong>Celular:</strong>
+      <%= @client.phone %>
+    </p>
+
+      <p class="fs-4 p-2">
+      <strong>Endereço:</strong>
+      <%= @client.address.district+", " + @client.address.complement %>
+    </p>
+
+    <%= link_to 'Alterar', edit_client_path(@client), :class => "btn btn-warning text-white col-2 p-2 m-2" %>
+    <%= link_to 'Voltar', clients_path, :class => "btn btn-secondary text-white col-2 p-2 m-2" %>
+  </div>
+</div>

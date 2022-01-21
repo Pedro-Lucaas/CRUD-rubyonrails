@@ -1,0 +1,10 @@
+<div class="container h-75">
+  <div class="row">
+    <h1 class="col-12">Novo Client</h1>
+
+    <%= render 'form', client: @client %>
+    <div class="text-end">
+      <%= link_to 'Voltar', clients_path, :class => "btn btn-secondary text-white col-2" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container h-75">
+    <div class="d-flex row">     
+        <h1>New Order</h1>
+        
+        <%= render 'form', order: @order %>
+        <div class="text-end">
+            <%= link_to 'Back', orders_path %>
+        </div>
+
+
+
+    </div>
+</div>

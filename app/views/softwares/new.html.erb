@@ -1,0 +1,10 @@
+<div class="container h-75">
+  <div class="row">    
+    <h1>Novo Software</h1>
+
+    <%= render 'form', software: @software %>
+    <div class="text-end">    
+        <%= link_to 'Voltar', softwares_path, :class => "btn btn-secondary text-white col-2" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container h-75">
+  <div class="row">  
+    <p id="notice"><%= notice %></p>
+
+    <h1 class="col-10">Hardwares</h1>
+    <%= link_to 'Novo Hardware', new_hardware_path, :class => "btn btn-primary text-white col-2 align-self-end" %>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Fornecedor</th>
+          <th>Método de Montagem</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @hardwares.each do |hardware| %>
+          <tr>
+            <td><%= hardware.product.name %></td>
+            <td><%= hardware.product.description %></td>
+            <td><%= hardware.product.price %></td>
+            <td><%= hardware.product.vendor.name %></td>
+            <td><%= hardware.assembly_method %></td>
+            <td><div class="d-flex btn-group" role="group" aria-label="Basic example">
+                  <%= link_to 'Info', hardware,  :class => "btn btn-success text-white" %>
+                  <%= link_to 'Alterar', edit_hardware_path(hardware),  :class => "btn btn-warning text-white" %>
+                  <%= link_to 'Remover', hardware, method: :delete, data: { confirm: 'Are you sure?' },  :class => "btn btn-danger text-white" %>
+                </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+   
+  </div>
+</div>
+

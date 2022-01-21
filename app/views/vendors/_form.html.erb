@@ -1,0 +1,32 @@
+<%= form_with(model: vendor) do |form| %>
+  <% if vendor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vendor.errors.count, "error") %> prohibited this vendor from being saved:</h2>
+
+      <ul>
+        <% vendor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Nome", :class => "form-label" %>
+    <%= form.text_field :name, :class => "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label "CNPJ", :class => "form-label" %>
+    <%= form.text_field :cnpj, :class => "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Endereço", :class => "form-label" %>
+    <%= form.collection_select :address_id, Address.order(:district), :id, :district, {prompt: "Selecione um endereço..."}, {class: "form-select"}  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salvar", :class => "btn btn-primary text-white col-2" %>
+  </div>
+<% end %>
